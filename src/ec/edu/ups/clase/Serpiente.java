@@ -5,11 +5,14 @@
  */
 package ec.edu.ups.clase;
 
+import ec.edu.ups.interfaces.Interface;
+
 /**
  *
  * @author Domenica Cañizares
  */
-public class Serpiente extends Reptil{
+public final class Serpiente extends Reptil implements Interface{
+    
     private String especie;
     private String descripcion;
     private boolean venenosa;
@@ -47,26 +50,44 @@ public class Serpiente extends Reptil{
 
     //get
     public String getEspecie() {
-        return especie;
+        return this.especie;
     }
 
     public String getDescripcion() {
-        return descripcion;
+        return this.descripcion;
     }
 
     public boolean isVenenosa() {
-        return venenosa;
+        return this.venenosa;
     }
 
     public String getAlimentacion() {
-        return alimentacion;
+        return this.alimentacion;
     }
 
+    //metodos abstractos
+    @Override
+    public double calcularEdad() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void comer() {
+        System.out.println("La serpiente "+this.getNombre()+" esta comiendo");
+    }
+
+    @Override
+    public void dormir() {
+        System.out.println("La serpiente "+this.getNombre()+" esta durmiendo");
+    }
+    
     //to String
     @Override
     public String toString() {
-        return "Serpiente{" + "especie=" + especie + ", descripcion=" + descripcion + ", venenosa=" + venenosa + ", alimentacion=" + alimentacion + '}';
+        return super.toString()+"Serpiente{" + "especie=" + especie + ", descripcion=" + descripcion + ", venenosa=" + venenosa + ", alimentacion=" + alimentacion + '}';
     }
+
+    
     
     
 }

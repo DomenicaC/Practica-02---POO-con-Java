@@ -8,8 +8,9 @@ package ec.edu.ups.clase;
 /**
  *
  * @author Domenica Cañizares
+ * 
  */
-public class Reptil extends Animal{
+public abstract class Reptil extends Animal{
     
     private boolean extremidades;
     private String sangre;
@@ -48,25 +49,28 @@ public class Reptil extends Animal{
 
     //get
     public boolean getExtremidades() {
-        return extremidades;
+        return this.extremidades;
     }
 
     public String getSangre() {
-        return sangre;
+        return this.sangre;
     }
 
     public int getNumHuevos() {
-        return numHuevos;
+        return this.numHuevos;
     }
 
     public String getDesplazamiento() {
-        return desplazamiento;
+        return this.desplazamiento;
     }
 
+    //abstract
+    public abstract double calcularEdad();
+    
     //to String
     @Override
     public String toString() {
-        return "Reptil{" + "extremidades=" + extremidades + ", sangre=" + sangre + ", numHuevos=" + numHuevos + ", desplazamiento=" + desplazamiento + '}';
+        return super.toString()+"Reptil{" + "extremidades=" + extremidades + ", sangre=" + sangre + ", numHuevos=" + numHuevos + ", desplazamiento=" + desplazamiento + '}';
     }
     
     

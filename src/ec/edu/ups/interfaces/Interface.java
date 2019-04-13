@@ -9,6 +9,7 @@ package ec.edu.ups.interfaces;
  *
  * @author Domenica Cañizares
  */
-public class Interface {
-    
+public interface Interface {
+    public abstract void comer();
+    public abstract void dormir();
 }

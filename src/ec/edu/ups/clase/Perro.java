@@ -5,15 +5,18 @@
  */
 package ec.edu.ups.clase;
 
+import ec.edu.ups.interfaces.Interface;
+import java.util.Date;
+
 /**
  *
  * @author Domenica Cañizares
  */
-public class Perro extends Mamifero{
+public final class Perro extends Mamifero implements Interface{
     
     private String raza;
     private int edad;
-    private double tempCorporal;
+    private String tempCorporal;
     private double audicion;
 
     public Perro() {
@@ -21,13 +24,15 @@ public class Perro extends Mamifero{
     }
 
     //cosntructor
-    public Perro(String raza, int edad, double tempCorporal, double audicion, int numHueso, boolean pelo, String comida, String habitat, int codigo, String nombre, String sexo, String color) {
-        super(numHueso, pelo, comida, habitat, codigo, nombre, sexo, color);
+
+    public Perro(String raza, int edad, String tempCorporal, double audicion, int numHueso, boolean pelo, String comida, String habitat, int codigo, String nombre, String sexo, String color, Date fechaNacimiento) {
+        super(numHueso, pelo, comida, habitat, codigo, nombre, sexo, color, fechaNacimiento);
         this.raza = raza;
         this.edad = edad;
         this.tempCorporal = tempCorporal;
         this.audicion = audicion;
     }
+    
 
     //set
     public void setRaza(String raza) {
@@ -38,7 +43,7 @@ public class Perro extends Mamifero{
         this.edad = edad;
     }
 
-    public void setTempCorporal(double tempCorporal) {
+    public void setTempCorporal(String tempCorporal) {
         this.tempCorporal = tempCorporal;
     }
 
@@ -48,27 +53,43 @@ public class Perro extends Mamifero{
 
     //get
     public String getRaza() {
-        return raza;
+        return this.raza;
     }
 
     public int getEdad() {
-        return edad;
+        return this.edad;
     }
 
-    public double getTempCorporal() {
-        return tempCorporal;
+    public String getTempCorporal() {
+        return this.tempCorporal;
     }
 
     public double getAudicion() {
-        return audicion;
+        return this.audicion;
     }
 
+    //metodos abstractos
+    @Override
+    public double calcularEdad() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void comer() {
+        System.out.println("El perro "+this.getNombre()+" esta comiendo");
+    }
+
+    @Override
+    public void dormir() {
+        System.out.println("El perro "+this.getNombre()+" esta durmiendo");
+    }
+    
     //to String
     @Override
     public String toString() {
-        return "Perro{" + "raza=" + raza + ", edad=" + edad + ", tempCorporal=" + tempCorporal + ", audicion=" + audicion + '}';
+        return super.toString()+"Perro{" + "raza=" + raza + ", edad=" + edad + ", tempCorporal=" + tempCorporal + ", audicion=" + audicion + '}';
     }
-    
+
     
     
 }

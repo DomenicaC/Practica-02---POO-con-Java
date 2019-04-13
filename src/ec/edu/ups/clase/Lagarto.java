@@ -5,11 +5,14 @@
  */
 package ec.edu.ups.clase;
 
+import ec.edu.ups.interfaces.Interface;
+
 /**
  *
  * @author Domenica Cañizares
  */
-public class Lagarto extends Reptil{
+public final class Lagarto extends Reptil implements Interface{
+    
     private String tipoPiel;
     private int añosVida;
     private String modoDefensa;
@@ -47,26 +50,43 @@ public class Lagarto extends Reptil{
 
     //get
     public String getTipoPiel() {
-        return tipoPiel;
+        return this.tipoPiel;
     }
 
     public int getAñosVida() {
-        return añosVida;
+        return this.añosVida;
     }
 
     public String getModoDefensa() {
-        return modoDefensa;
+        return this.modoDefensa;
     }
 
     public boolean isCambiaColor() {
-        return cambiaColor;
+        return this.cambiaColor;
     }
 
+    //metodos abstractos
+    @Override
+    public double calcularEdad() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void comer() {
+        System.out.println("El lagarto "+this.getNombre()+" esta comiendo");
+    }
+
+    @Override
+    public void dormir() {
+        System.out.println("El lagarto "+this.getNombre()+" esta durmiendo");
+    }
+    
     //to String
     @Override
     public String toString() {
-        return "Lagarto{" + "tipoPiel=" + tipoPiel + ", a\u00f1osVida=" + añosVida + ", modoDefensa=" + modoDefensa + ", cambiaColor=" + cambiaColor + '}';
+        return super.toString()+"Lagarto{" + "tipoPiel=" + tipoPiel + ", a\u00f1osVida=" + añosVida + ", modoDefensa=" + modoDefensa + ", cambiaColor=" + cambiaColor + '}';
     }
+
     
     
 }

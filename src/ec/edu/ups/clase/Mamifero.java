@@ -5,29 +5,31 @@
  */
 package ec.edu.ups.clase;
 
+import java.util.Date;
+
 /**
  *
  * @author Domenica Cañizares
  */
-public class Mamifero extends Animal{
+public abstract class Mamifero extends Animal{
     private int numHueso;
     private boolean pelo;
     private String comida;
     private String habitat;
-    
+    private Date fechaNacimiento;
 
     public Mamifero() {
         
     }
     
     //constructor
-
-    public Mamifero(int numHueso, boolean pelo, String comida, String habitat, int codigo, String nombre, String sexo, String color) {
+    public Mamifero(int numHueso, boolean pelo, String comida, String habitat, int codigo, String nombre, String sexo, String color, Date fechaNacimiento) {
         super(codigo, nombre, sexo, color);
         this.numHueso = numHueso;
         this.pelo = pelo;
         this.comida = comida;
         this.habitat = habitat;
+        this.fechaNacimiento = fechaNacimiento;
     }
     
     //set
@@ -47,27 +49,37 @@ public class Mamifero extends Animal{
         this.habitat = habitat;
     }
     
+    public void setFechaNacimiento(Date fechaNacimiento){
+        this.fechaNacimiento = fechaNacimiento;
+    }
     //get
     public int getNumHueso() {
-        return numHueso;
+        return this.numHueso;
     }
 
     public boolean isPelo() {
-        return pelo;
+        return this.pelo;
     }
 
     public String getComida() {
-        return comida;
+        return this.comida;
     }
 
     public String getHabitat() {
-        return habitat;
+        return this.habitat;
     }
+    
+    public Date getFechaNacimiento(){
+        return this.fechaNacimiento;
+    }
+    
+    //abstract
+    public abstract double calcularEdad();
     
     //to String
     @Override
     public String toString() {
-        return "Mamifero{" + "numHueso=" + numHueso + ", pelo=" + pelo + ", comida=" + comida + ", habitat=" + habitat + '}';
+        return super.toString()+"Mamifero{" + "numHueso=" + numHueso + ", pelo=" + pelo + ", comida=" + comida + ", habitat=" + habitat + '}';
     }
     
 }
