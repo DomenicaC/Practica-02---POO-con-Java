@@ -34,6 +34,7 @@ public class Prueba {
         
         perro.comer();
         perro.dormir();
+        perro.calcularEdad();
         
         //Clase ballena
         Ballena ballena = new Ballena();
@@ -54,13 +55,14 @@ public class Prueba {
         
         ballena.comer();
         ballena.dormir();
+        ballena.calcularEdad();
         
         //Clase Serpiente
         Serpiente serpiente = new Serpiente();
         
         serpiente.setCodigo(3);
         serpiente.setNombre("Luci");
-        serpiente.setSexo("Macho");
+        serpiente.setSexo("Hembra");
         serpiente.setColor("Verde");
         serpiente.setDescripcion("Serpiente que vive en zonas calidas");
         serpiente.setAlimentacion("Ratones");
@@ -73,13 +75,14 @@ public class Prueba {
         
         serpiente.comer();
         serpiente.dormir();
+        serpiente.calcularEdad();
         
         //Clase lagarto
         Lagarto lagarto = new Lagarto();
         
         lagarto.setCodigo(1);
-        lagarto.setNombre("Pancho");
-        lagarto.setSexo("Macho");
+        lagarto.setNombre("Vera");
+        lagarto.setSexo("Hembra");
         lagarto.setColor("Verde con pintas cafes");
         lagarto.setAñosVida(25);
         lagarto.setCambiaColor(false);
@@ -92,5 +95,6 @@ public class Prueba {
         
         lagarto.comer();
         lagarto.dormir();
+        lagarto.calcularEdad();
     }
 }
